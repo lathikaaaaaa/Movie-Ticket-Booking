@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;   
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.home-container {
+    font-family: Garamond;
+    text-align: center;
+    padding: 50px;
+    background-color: #181818;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: Garamond;
+    color: #ffffff;
+}
+
+.movies-list {
+    display: flex;
+    justify-content: center;
+    font-family: Garamond;
+    flex-wrap: wrap;
+}
+
+.movie-item {
+    background-color: #444;
+    color: white;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    width: 180px;
+    font-family: Garamond;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-item:hover {
+    background-color: #555;
+    transform: translateY(-5px);
+    font-family: Garamond;
+}
+
+.movie-item img {
+    border-radius: 8px;
+    max-width: 100%;
+    font-family: Garamond;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Garamond;
+    margin-top: 10px;
+}
+
+.movie-details-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #2c2c2c;
+    font-family: Garamond;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#movie-poster {
+    max-width: 100%;
+    height: auto;
+    font-family: Garamond;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#movie-overview {
+    font-family: Garamond;
+    font-size: 18px;
+    margin: 20px 0;
+    color: #ccc;
+}
+
+#release-date {
+    font-family: Garamond;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+#book-button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Garamond;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#book-button:hover {
+    background-color: #686868;
+}
+
+/* Seat Selection Styles */
+.seats-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #2c2c2c;
+    font-family: Garamond;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.seat-map {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;	
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    background-color: #444;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.seat:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    background-color: #28a745;
+}
+
+@media (max-width: 768px) {
+    .movie-item {
+        width: 45%;
+        margin: 10px;
+    }
+
+    .seat-map {
+        max-width: 100%;
+    }
+
+    .seat {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .seat {
+        width: 35px;
+        height: 35px;
+    }
+}

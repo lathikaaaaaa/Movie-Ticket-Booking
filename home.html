@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMate</title>
+    <style>
+        /* CSS Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Garamond, serif;
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('C:\\Users\\DELL\\Downloads\\header-image.png') repeat;
+            background-size: auto; /* Set to 'auto' to maintain original size */
+            filter: blur(8px); /* Adjust the blur amount as needed */
+            z-index: -1;
+            animation: moveBackground 30s linear infinite; /* Animation for moving background */
+        }
+
+        @keyframes moveBackground {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%; /* Adjust movement without scaling */
+            }
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1{
+            text-align: center;
+            font-family: Garamond;
+            color:#ffffff;
+        }
+
+        .title {
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter {
+            display: inline-block;
+            animation: bounceIn 1.5s ease-in-out forwards;
+        }
+
+        .get-started-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-family: Garamond;
+            color: #33401c;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .get-started-btn span {
+            display: inline-block;
+            position: relative;
+            transition: padding-right 0.5s;
+        }
+
+        .get-started-btn span::after {
+            content: '\00bb'; /* Right arrow */
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            right: 15px; /* Adjust the right position of the arrow */
+            transform: translateY(-50%);
+            transition: opacity 0.5s, right 0.5s;
+        }
+
+        .get-started-btn:hover {
+            transform: scale(1.1);
+            background-color: #f3f3f3;
+        }
+
+        .get-started-btn:hover span {
+            padding-right: 30px; /* Adjust padding to make space for the arrow */
+        }
+
+        .get-started-btn:hover span::after {
+            opacity: 1;
+            right: 10px; /* Adjust the right position of the arrow when visible */
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-10px);
+            }
+            90% {
+                transform: translateY(5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML Content -->
+    <div class="container">
+        <h1 class="title">
+            <span class="letter" style="animation-delay: 0s;">C</span>
+            <span class="letter" style="animation-delay: 0.1s;">i</span>
+            <span class="letter" style="animation-delay: 0.2s;">n</span>
+            <span class="letter" style="animation-delay: 0.3s;">e</span>
+            <span class="letter" style="animation-delay: 0.4s;">M</span>
+            <span class="letter" style="animation-delay: 0.5s;">a</span>
+            <span class="letter" style="animation-delay: 0.6s;">t</span>
+            <span class="letter" style="animation-delay: 0.7s;">e</span>
+        </h1>
+        <h1>Watch your favorite movie with your favorite person </h1>
+        <button class="get-started-btn" onclick="redirectToMain()"><span>Get Started</span></button>
+    </div>
+
+    <script>
+        // JavaScript Code
+        function redirectToMain() {
+            window.location.href = "main.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+    body {
+        font-family: Garamond;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Centers the container vertically */
+        background-color: #f0f0f0; /* Light background color for contrast */
+    }
+    .container {
+        text-align: center;
+        max-width: 600px; /* Set a maximum width for better readability */
+        width: 100%;
+        background-color: #181818; /* Background color for the container */
+        color: #ffffff; /* White text color for contrast */
+        padding: 20px; /* Padding inside the container */
+        border-radius: 10px; /* Optional: Rounded corners for the container */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
+    }
+    .success-message {
+        margin-top: 20px;
+	font-family: Garamond;
+        font-size: 18px;
+        color: #28a745;
+        font-weight: bold;
+    }
+    .book-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+	font-family: Garamond;
+        color: #333;
+	background-color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .book-btn:hover {
+        background-color: #686868; /* Button hover color */
+    }
+    .text {
+        margin-bottom: 25px; /* Adjust the value to control the space */
+    }	
+    </style>	
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment</h1>
+        <p class="text"; style="font-family:Garamond">You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>.</p>
+        <button id="payNow" class="book-btn">Pay Now</button>
+
+        <!-- Success Message -->
+        <p id="successMessage" class="success-message" style="display: none;">Payment successful! Enjoy your movie.</p>
+    </div>
+
+    <script>
+        const count = document.getElementById('count');
+        const total = document.getElementById('total');
+        const selectedSeatsCount = localStorage.getItem('selectedSeatsCount') || 0;
+        const selectedMoviePrice = localStorage.getItem('selectedMoviePrice') || 0;
+        
+        count.innerText = selectedSeatsCount;
+        total.innerText = selectedSeatsCount * selectedMoviePrice;
+
+        // Handle Pay Now button click
+        document.getElementById('payNow').addEventListener('click', () => {
+            // Display success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Simulate a successful payment process (you can add actual payment integration here)
+            setTimeout(() => {
+                // Redirect back to the main booking page after payment
+                window.location.href = 'main.html';
+            }, 15000);
+        });
+    </script>
+</body>
+</html>
